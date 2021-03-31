@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NsAlram">
+    <insert id="InsertJoinAlram" parameterType="MyAlram">
+        insert into ALRAM("seq_alram", "mid", "studyname", "content", "created_at", "read_at")
+        VALUES(seq_alram.nextval, #{mid}, #{studyname}, #{content}, sysdate, default)
+    </insert>
+
+    <select id="SelectAlramById" parameterType="String" resultType="MyAlram">
+        select *
+        from ALRAM
+        where "mid" = #{mid}
+        order by "seq_alram" desc
+    </select>
+</mapper>

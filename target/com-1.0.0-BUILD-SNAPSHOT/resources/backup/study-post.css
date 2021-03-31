@@ -1,0 +1,427 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 1500px;
+}
+
+.post-wrapper {
+  width: 100%;
+  height: 1500px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.study-post {
+  width: 700px;
+  height: 100%;
+  top: 150px;
+  left: 320px;
+  position: absolute;
+}
+
+.post-write {
+  width: 600px;
+  height: 270px;
+  padding: 20px;
+  margin: auto;
+  font-size: 13px;
+  background-color: #eee;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.post-user-img {
+  text-align: left;
+  margin-left: 55px;
+}
+
+.post-user-img img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.post-write .file-upload-btn {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #333;
+  cursor: pointer;
+}
+
+.post-write input[type='file'] {
+  width: 120px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  left: 250px;
+  top: 85px;
+  opacity: 0;
+}
+
+.post-write .fileupload-intro {
+  font-weight: 500;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.post-write textarea {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 450px;
+  height: 80px;
+  resize: none;
+  padding: 13px;
+  font-size: 13px;
+  overflow: auto;
+}
+
+.post-write textarea:focus {
+  outline: none;
+}
+
+.post-write textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.post-write button {
+  width: 60px;
+  height: 25px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.post-write button:hover {
+  font-weight: 500;
+}
+
+.post-write button:focus {
+  outline: none;
+}
+
+.post-list {
+  width: 600px;
+  height: 100%;
+  margin: auto;
+  padding-top: 50px;
+  font-size: 13px;
+  padding-bottom: 50px;
+}
+
+.user-profile-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.post-list .post-list-item {
+  width: 600px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.post-list .leader-write {
+  background-color: #f1f2f6;
+  font-weight: 500;
+  border: none;
+}
+
+.post-list-item .comment-content {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 500px;
+  height: 120px;
+  resize: none;
+  padding: 13px;
+  font-size: 13px;
+}
+
+.post-list-item .comment-content:focus {
+  outline: none;
+}
+
+.post-modify-group {
+  width: 500px;
+  text-align: center;
+  display: none;
+  transition: all 1s;
+}
+
+.comment-modify {
+  width: 500px;
+  height: 120px;
+  resize: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 13px;
+  font-size: 13px;
+  overflow: auto;
+}
+
+.comment-modify::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-modify:focus {
+  outline: none;
+}
+
+.post-modify-submit {
+  width: 60px;
+  height: 25px;
+  background-color: ccc;
+  border-radius: 4px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.post-modify-submit:hover {
+  font-weight: 500;
+}
+
+.post-modify-submit:focus {
+  outline: none;
+}
+
+.post-filedown {
+  display: inline-block;
+  margin-top: 10px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.post-filedown i::before {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.post-list-item i {
+  color: #f39c12;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+.writer {
+  display: inline-block;
+  margin-right: 10px;
+  width: 110px;
+}
+
+.write-date {
+  color: silver;
+  margin-left: 10px;
+}
+
+.post-modify-btn:before,
+.post-delete-btn:before {
+  color: gray;
+  font-weight: 500;
+  position: relative;
+  left: 200px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.padding-div {
+  padding-bottom: 250px;
+}
+
+/* Study Menu (aside) */
+
+.study-menu {
+  width: 230px;
+  height: 800px;
+  position: fixed;
+  top: 170px;
+  right: 23%;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+.menu-toggle {
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.menu-btn {
+  border: none;
+  width: 200px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu-btn:focus {
+  outline: none;
+}
+
+.menu-content {
+  margin-top: 0;
+  margin-left: 15px;
+  padding: 5px;
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  border-radius: 4px;
+  display: none;
+  border: 1px solid #eee;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #eee;
+  overflow: auto;
+  -ms-overflow-style: none;
+}
+
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+
+.study-member-list {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.study-member-list img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.study-member-list span {
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.study-member-list .leader {
+  font-weight: 600;
+}
+
+.study-file-list {
+  padding: 10px;
+}
+
+.study-file-list span {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.study-file-list span:hover {
+  font-weight: 500;
+}
+
+.study-file-list i {
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+.study-manage {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.study-manage p {
+  font-weight: 500;
+}
+
+.wating-member-list {
+  margin-bottom: 10px;
+}
+
+.member-approve-btn {
+  width: 35px;
+  height: 20px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 1px;
+}
+
+.member-approve-btn:hover {
+  font-weight: 500;
+}
+
+.member-approve-btn:focus {
+  outline: none;
+}
+
+.center-line {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border: 1px solid #eee;
+}
+
+.study-manage-menu button {
+  width: 150px;
+  height: 25px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 1px;
+}
+
+.study-manage-menu button:hover {
+  font-weight: 500;
+}
+
+.study-manage-menu button:focus {
+  outline: none;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 1920px) {
+  .study-post {
+    top: 170px;
+    left: 25%;
+    position: absolute;
+  }
+
+  .study-menu {
+    width: 230px;
+    height: 400px;
+    position: fixed;
+    top: 190px;
+    right: 27%;
+    z-index: 2;
+    transition: all 0.5s;
+  }
+}

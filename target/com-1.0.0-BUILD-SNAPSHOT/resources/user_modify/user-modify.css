@@ -1,0 +1,243 @@
+/* COMMON */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 1100px;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.span-underline {
+  text-decoration: underline;
+}
+
+/* User Modify */
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  display: flex;
+  justify-content: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-title h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+}
+
+.modify-image {
+  height: 600px;
+  width: 210px;
+  background-image: url(./../images/signup.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+  margin-right: 40px;
+  margin-left: 40px;
+  box-shadow: 0.5px 0.5px 1px 1px #eee;
+}
+
+.modify-item-group {
+  width: 500px;
+}
+
+.modify-item {
+  margin-right: 10px;
+}
+
+.modify-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-upload {
+  width: 100px;
+  height: 20px;
+  display: flex;
+  position: relative;
+}
+
+.profile-upload i {
+  width: 30px;
+  font-size: 15px;
+  color: #e17055;
+  margin-left: 6px;
+  opacity: 0.4;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.modify-profile input[type='file'] {
+  opacity: 0;
+  width: 80px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  padding: 10px;
+}
+
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0.5px 0.5px 1px 1px #eee;
+}
+
+.modify-input {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.modify-input input {
+  margin-right: 10px;
+  border: 1px solid #eee;
+  padding: 9px;
+  margin-left: 0;
+  font-size: 13px;
+}
+
+.modify-input input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.modify-input button {
+  margin-right: 10px;
+  padding: 9px;
+  margin-left: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.modify-input button:hover {
+  font-weight: 500;
+}
+
+.modify-input select {
+  margin-right: 8px;
+  border: 1px solid #eee;
+  padding: 8px;
+  margin-left: 0;
+}
+
+.modify-input select:focus {
+  outline: none;
+}
+
+.modify-button-group {
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.modify-button-group button:nth-child(2) {
+  background-color: #e17055;
+  color: white;
+}
+
+.modify-button-group button {
+  width: 150px;
+  height: 30px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  padding: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modify-button-group button:hover {
+  font-weight: 500;
+}
+
+.error {
+  display: inline-block;
+  font-size: 11px;
+  color: red;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+/* User Delete */
+
+.user-delete {
+  width: 570px;
+  height: 150px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  position: absolute;
+  top: 920px;
+  left: 27.3%;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 250px;
+}
+
+.user-delete h3 {
+  color: #c0392b;
+}
+
+.user-delete p {
+  margin-bottom: 20px;
+}
+
+.user-delete button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.user-delete button:hover {
+  font-weight: 500;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 1920px) {
+  .wrapper {
+    top: 22%;
+  }
+
+  .user-delete {
+    left: 31.5%;
+    margin-top: 30px;
+  }
+}

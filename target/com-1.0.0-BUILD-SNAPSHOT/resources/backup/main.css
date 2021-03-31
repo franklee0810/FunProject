@@ -1,0 +1,456 @@
+/* COMMON */
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 1500px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: burlywood;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.header-logo-title h1 {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.header-menu {
+  padding: 10px;
+  font-size: 13px;
+  margin-right: 20px;
+}
+
+.header-menu ul {
+  display: flex;
+}
+
+.header-menu li {
+  margin-right: 12px;
+}
+
+.header-menu li:hover {
+  font-weight: 600;
+}
+
+.header-search input {
+  width: 150px;
+  height: 20px;
+  font-size: 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-align: center;
+  margin-right: 7px;
+  padding: 11px;
+}
+
+.header-search input:focus {
+  outline: none;
+}
+
+.header-search i {
+  font-size: 19px;
+  margin-right: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.header-search i:hover {
+  color: white;
+}
+
+/* LOGIN */
+
+.login-black-background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+
+.login-white-background {
+  background: white;
+  width: 30%;
+  margin: 200px auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 1s;
+}
+
+.login-white-background h3 {
+  font-size: 20px;
+}
+
+.login-white-background input {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.login-white-background input[type='password'] {
+  margin-bottom: 20px;
+}
+
+.login-white-background input:focus {
+  outline: none;
+}
+
+.login-white-background span a {
+  color: gray;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.login-white-background p {
+  color: #333;
+  font-weight: 500;
+  text-align: right;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.login-white-background button {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login-white-background button:hover {
+  font-weight: 500;
+}
+
+.login-white-background button:focus {
+  outline: none;
+}
+
+.google-login-btn {
+  width: 200px;
+  height: 30px;
+  background-image: url(../images/google_login.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+
+/* USER INTERFACE */
+
+.user-interface {
+  width: 200px;
+  height: 270px;
+  position: fixed;
+  top: 10%;
+  left: 74%;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: white;
+  z-index: 2;
+  display: none;
+  transition: all 0.5s;
+  font-size: 13px;
+  box-shadow: 1px 1px 1px #999;
+}
+
+.user-image {
+  border-radius: 50%;
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  margin: auto;
+}
+
+.user-name {
+  text-align: center;
+}
+
+.user-name-bar {
+  width: 160px;
+  height: 2px;
+  background-color: #999;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.user-interface-menu li {
+  margin-bottom: 10px;
+}
+
+.user-interface-menu li:hover {
+  font-weight: 500;
+}
+
+.user-alram {
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  position: fixed;
+  top: 10%;
+  left: 72%;
+  display: none;
+  z-index: 2;
+  transition: all 0.5s;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #999;
+  font-size: 12px;
+}
+
+/* IMAGE SECTION */
+
+.main-image-content {
+  width: 60%;
+  height: 300px;
+  background-color: #333;
+  background-image: url(../images/main_study.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10% auto 50px auto;
+}
+
+.main-image-content h2 {
+  padding: 15px;
+  position: relative;
+  top: 50%;
+}
+
+.main-image-content p {
+  padding: 17px;
+  position: relative;
+  top: 35%;
+  font-weight: 500;
+}
+
+/* STUDY LIST */
+
+.study-list-title-sm {
+  display: block;
+  font-size: 14px;
+  color: tomato;
+  margin-left: 20%;
+}
+
+.study-list-title {
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 20%;
+}
+
+.study-list-title-group {
+  margin-bottom: 20px;
+}
+
+.study-hit-slide {
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+.study-hit-slide button {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: white;
+  color: #333;
+  font-size: 12px;
+  width: 20px;
+  margin-right: 5px;
+  position: relative;
+  left: 43%;
+  cursor: pointer;
+}
+
+.study-hit-slide button:hover {
+  color: gray;
+}
+
+/* Swiper */
+.swiper-container {
+  width: 755px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.swiper-slide {
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.study-hit-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.study-hit-item {
+  width: 240px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.study-subject-list {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+.study-list-item {
+  width: 240px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  height: 120px;
+  background-color: burlywood;
+  position: fixed;
+  bottom: 0px;
+  font-size: 13px;
+  padding: 8px;
+  display: none;
+}
+
+.footer-top ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-top li {
+  margin-right: 15px;
+}
+
+.footer-top li:hover {
+  font-weight: 500;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 480px) {
+  /* header */
+
+  .header {
+    height: 80px;
+  }
+
+  .header-logo-title h1 {
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 8px;
+  }
+
+  .header-menu {
+    padding: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  .header-search input {
+    display: none;
+  }
+
+  .header-search i {
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  /* IMAGE SECTION */
+
+  .main-image-content {
+    width: 100%;
+    height: 300px;
+    background-color: #333;
+    background-image: url(../images/main_study.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+  }
+
+  .main-image-content h2 {
+    padding: 15px;
+    position: relative;
+    top: 80%;
+    font-size: 20px;
+  }
+
+  .main-image-content p {
+    padding: 15px;
+    position: relative;
+    top: 65%;
+    font-weight: 500;
+    font-size: 12px;
+  }
+}

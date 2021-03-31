@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="MapperStudy">
+		<!--  study  -->
+		<sql id="myselect">
+			select "seq_study", "subject", "intrd", "time_from", "time_to", "personnel", "city", "borough", "topic", "image", "avg_grade"
+			from study
+		</sql>
+
+		<select id="GetStudyList" resultType="MyStudy">
+			select * from study order by "seq_study" desc
+		</select>
+
+		<select id="GetStudyListByAvg_grade" resultType="MyStudy">
+			select * from study order by "avg_grade" desc
+		</select>
+
+		<insert id="InsertStudy" parameterType="MyStudy">
+			insert into
+			study("seq_study", "subject", "intrd", "time_from", "time_to", "personnel", "like", "image", "city", "borough", "topic", "avg_grade")
+			values(seq_study.nextval, #{subject}, #{intrd}, #{time_from}, #{time_to}, #{personnel}, default, #{image}, #{city}, #{borough}, #{topic}, default)
+		</insert>
+
+		<select id="GetStudyListByPk" parameterType="Integer" resultType="MyStudy">
+			<include refid="myselect" />
+			where "seq_study" = #{seq_study}
+		</select>
+
+		<!-- studyReview -->
+		<insert id="InsertStudyReview" parameterType="MyStudyReview">
+			insert into study_review ("seq_review", "seq_study", "mid", "grade", "content", "inputdate") values
+				(seq_review.nextval, #{seq_study}, #{mid}, #{grade}, #{content}, sysdate)
+		</insert>
+
+
+		<select id="GetStudyReviewList" parameterType="int" resultType="MyStudyReview">
+			select * from study_review where "seq_study" = #{seq_study} order by "inputdate" desc
+		</select>
+
+		<delete id="DeleteStudyReviewList" parameterType="Integer">
+			delete from study_review where "seq_review" = #{seq_review}
+		</delete>
+
+		<update id="ModifyStudyReviewList" parameterType="MyStudyReview">
+			update study_review
+			set "content" = #{content}
+			where "seq_review" = #{seq_review}
+		</update>
+
+		<select id="SearchStudyList" resultType="MyStudy">
+			select "seq_study", "subject", "intrd", "time_from", "time_to", "personnel", "city", "borough", "topic", "image", "avg_grade"
+			from study
+			where "subject" like '%'||#{keyword}||'%'
+		</select>
+
+		<select id="SearchStudyListByArea" resultType="MyStudy" parameterType="hashMap">
+			select *
+			from study
+			<if test="city != null or borough != null or topic != null">
+				where
+			</if>
+			<if test="city != null">
+				"city" like '%'||#{city}||'%'
+			</if>
+			<if test="city != null and (borough != null or topic != null)">
+				and
+			</if>
+			<if test="borough != null">
+				"borough" like '%'||#{borough}||'%'
+			</if>
+			<if test="borough != null and topic != null">
+				and
+			</if>
+			<if test="topic != null">
+				"topic" like '%'||#{topic}||'%'
+			</if>
+		</select>
+
+
+		<select id="SelectList" resultType="MyStudy">
+				select * from study
+		</select>
+
+		<select id="selectStudyImage" resultType="Integer" parameterType="String">
+				select "seq_study"
+				from study
+				where "image" = #{image}
+		</select>
+
+		<insert id="InsertData" parameterType="hashMap">
+				insert into study_sbscr values(#{mid},#{seq_study},#{nickname},#{level1})
+		</insert>
+
+		<select id="SelectMyList" resultType="MyStudy">
+				select m."seq_study" as seq_study,s."subject" as subject, s."personnel" as personnel
+				from study_sbscr m inner join study s on s."seq_study" = m."seq_study"
+				where m."mid" = #{mid} and m."level" in (1,2)
+		</select>
+
+		<update id="UpdatePersonnel" >
+				update study
+				set "personnel" = "personnel"+1
+				where "seq_study" = #{seq_study}
+		</update>
+
+		<select id="SelectListByNum" resultType="MyMyStudy" parameterType="hashMap">
+				select *
+				from study_sbscr
+				where "seq_study" = #{seq_study} and "mid" = #{mid}
+		</select>
+
+		<select id="SelectLevel" resultType="MyMyStudy" parameterType="hashMap">
+				select *
+				from study_sbscr
+				where( "mid" = #{mid} and "seq_study" = #{seq_study}) and "level" >= 1
+		</select>
+
+		<update id="UpdateLevel">
+				update study_sbscr
+				set "level" = "level"+1
+				where "seq_study" = #{seq_study} and "mid" = #{mid}
+		</update>
+
+		<delete id="DeleteStudy" parameterType="hashMap">
+				delete study where "seq_study" = #{seq_study}
+		</delete>
+
+		<select id="selectSBSCRStudy" resultType="MyStudy" parameterType="String">
+				select *
+				from STUDY
+				where "seq_study" in
+					  (select "seq_study"
+					   from study_sbscr
+					   where "mid" = #{mid} and "level" in(1,2))
+		</select>
+
+		<update id="UpdateStudyGrade" parameterType="String">
+				update STUDY
+				set "avg_grade" = (select trunc(avg("grade"), 1) as avg_grade
+								   from STUDY_REVIEW
+								   where "seq_study" = #{seq_study})
+				where "seq_study" = #{seq_study}
+		</update>
+
+		<select id="SelectStudyOne" parameterType="Integer" resultType="MyStudy">
+				select *
+				from study
+				where "seq_study" = #{seq_study}
+		</select>
+
+		<select id="SelectPostAlramMember" parameterType="hashMap" resultType="MyMyStudy">
+			select *
+			from STUDY_SBSCR
+			where "seq_study" = #{seq_study} and "mid" not in (#{mid}) and "level" in (1,2)
+		</select>
+</mapper>
+	
+	

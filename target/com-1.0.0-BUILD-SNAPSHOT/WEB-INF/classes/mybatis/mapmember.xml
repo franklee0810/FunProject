@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="NsMember">
+		<select id="selectMember" resultType="MyMember" parameterType="hashMap">
+			select *
+			from member
+			where "mid" = #{mid} and "password" = #{password}
+		</select>
+
+		<select id="selectMemberNickname" resultType="MyMember" parameterType="String">
+			select *
+			from member
+			where "nickname" = #{nickname}
+		</select>
+
+		<select id="selectMemberMid" resultType="MyMember" parameterType="String">
+			select *
+			from member
+			where "mid" = #{mid}
+		</select>
+		
+		<select id="SelectStudyMemberList" resultType="MyMember" parameterType="hashMap" >
+			select m."mid" as mid, m."nickname" as nickname, m."profile" as profile
+			from member m inner join study_sbscr s on m."mid" = s."mid"
+			where s."seq_study" = #{seq_study} and "level" = 1
+		</select>
+		
+		<select id="SelectHostList" resultType="MyMember" parameterType="hashMap" >
+			select m."mid" as mid, m."password" as password, m."nickname" as nickname, m."gender" as gender, m."age" as age, m."profile" as profile, m."email" as email, m."name" as name
+			from member m inner join study_sbscr s on m."mid" = s."mid"
+			where s."seq_study" = #{seq_study} and "level" = 2
+		</select>
+
+		<select id="selectHostMember" resultType="MyMember" parameterType="Integer" >
+			select *
+			from member
+			where "mid" in (select "mid"
+			from STUDY_SBSCR
+			where "seq_study" = #{seq_study} and "level" = 2)
+		</select>
+		
+		<select id="SelectSubscription" resultType="MyMember" parameterType="hashMap" >
+			select m."nickname" as nickname, m."mid" as mid, m."profile" as profile
+			from member m inner join study_sbscr s on m."mid" = s."mid"
+			where s."seq_study"  = #{seq_study} and s."level" = 0
+		</select>
+
+		<insert id="insertStudyHost" parameterType="hashMap">
+			insert into STUDY_SBSCR values(#{mid} ,#{seq_study} ,#{nickname} , '2')
+		</insert>
+
+		<insert id="insertMemberOne" parameterType="MyMember">
+			insert into member("mid", "password", "nickname", "gender", "age", "profile", "email", "name")
+			values(#{mid},#{password},#{nickname},#{gender},#{age},#{profile},#{email},#{name})
+		</insert>
+
+		<update id="updateMemberOne" parameterType="MyMember">
+			update member
+			set "password" = #{password}, "gender" = #{gender}, "age" = #{age}, "profile" = #{profile}, "email" = #{email}, "nickname" = #{nickname}
+			where "mid" = #{mid}
+		</update>
+
+		<delete id="deleteMemberOne" parameterType="String">
+			delete from member where "mid"=#{mid}
+		</delete>
+
+		<select id="selectWriterMember" parameterType="String" resultType="MyMember">
+			select "mid", "nickname", "profile"
+			from MEMBER
+			where "mid" = #{mid}
+		</select>
+
+	</mapper>
+	
+	

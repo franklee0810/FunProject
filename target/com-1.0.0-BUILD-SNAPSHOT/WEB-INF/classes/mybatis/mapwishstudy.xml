@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="MapperWish">
+		<insert id="InsertWishList" parameterType="MyWishStudy">
+			insert into study_wish("mid", "seq_study", "subject")
+			values(#{mid}, #{seq_study}, #{subject})
+		</insert>
+		
+		<select id="SelectList" parameterType="String" resultType="MyStudy" >
+			select *
+			from STUDY
+			where "seq_study" in
+				  (select "seq_study"
+				   from study_wish
+				   where "mid" = 'newbie')
+		</select>
+		
+		<delete id="DeleteWishList" parameterType="HashMap" >
+			delete study_wish
+			where "seq_study" = ${seq_study}
+		</delete>
+		
+		<select id="SelectListCheck" parameterType="HashMap" resultType="MyWishStudy">
+			select *
+			from study_wish
+			where "mid" = #{mid} and "seq_study" = #{seq_study}
+		</select>
+	</mapper>

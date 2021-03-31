@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SGETHER | 스터디 찾기</title>
+    <link rel="stylesheet" href="study-list.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <!-- User Alram & Interface Group -->
+    <div class="join-study-list">
+        <span><a href="#">Join Study List</a></span>
+        <span><a href="#">Join Study List</a></span>
+        <span><a href="#">Join Study List</a></span>
+    </div>
+
+    <div class="user-alram">
+        Alram :)
+    </div>
+
+    <div class="user-interface">
+        <div class="user-image">
+            <img src="" alt="">
+        </div>
+
+        <div class="user-name">
+            <p><strong>OOO님 환영합니다 :)</strong></p>
+            <div class="user-name-bar"></div>
+        </div>
+
+        <div class="user-interface-menu">
+            <ul>
+                <li><a href="#">회원정보 수정</a></li>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Study Create -->
+    <div class="study-black-background">
+        <div class="study-create">
+            <p class="login-close">×</p>
+            <h3>스터디 생성</h3>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <img src="./../images/study-create-img.png" class="study-image-preview">
+                <input type="file" class="upload-study-image"><br>
+
+                <select>
+                    <option selected>개발</option>
+                    <option>취미</option>
+                    <option>외국어</option>
+                    <option>자기계발</option>
+                </select><br>
+
+                <input type="text" name="studyName" placeholder="스터디 이름"><br>
+
+                <input type="number" name="personnal" placeholder="참가 인원"><br>
+
+                <input type="time" name="time1">
+                &nbsp; -  &nbsp;
+                <input type="time" name="time2"><br>
+
+                <select>
+                    <option selected>지역 1</option>
+                    <option>서울시</option>
+                </select>
+                &nbsp; -  &nbsp;
+                <select>
+                    <option selected>지역 2</option>
+                    <option>영등포</option>
+                </select><br>
+
+                <textarea placeholder="스터디 소개를 입력 해주세요"></textarea><br><br>
+
+                <button><a href="#">검색</a></button>
+                <button type="submit">스터디 만들기</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <div class="header-logo-title">
+                <a href="#"><h1>SGETHER</h1></a>
+            </div>
+
+            <div class="header-menu">
+                <ul>
+                    <li><a href="#">스터디 찾기</a></li>
+                    <li><a href="#" class="join-study-btn">가입 중 스터디</a></li>
+                    <li><a href="#" class="login-btn">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+
+            <div class="header-search">
+                <input type="text" placeholder="스터디 검색"> 
+                <a href="#"><i class="xi-search"></i></a>
+                <i class="xi-bell-o main-user-alram"></i>
+                <i class="xi-profile main-user-btn"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Study List -->
+    <section>
+            <div class="filter-group">
+                <select name="city" class="city">
+                    <option selected>지역 1</option>
+                    <option>서울</option>
+                    <option>경기</option>
+                </select>
+
+                <select name="borough" class="borough">
+                    <option selected>지역 2</option>
+                </select>
+
+                <select name="field">
+                    <option selected>분야</option>
+                    <option>1</option>
+                </select>
+
+                <button class="search-btn"><a href="#">검색</a></button>
+                
+                <button><a href="#" class="study-create-btn">스터디 만들기</a></button>
+            </div>
+
+            <div class="study-list-container">
+                <div class="study-list-item-group">
+                    <div class="study-list-item">
+                        <div class="study-list-image">
+                            <img src="#">
+                        </div>
+
+                        <div class="study-list-text">
+                            <span class="field">자기계발</span>
+                            <i class="xi-star"></i>
+                            <span class="grade">5.0</span><br>
+
+                            <a href="#"><h3 class="study-title">스터디 제목</h3></a>
+
+                            <div class="sub-info">
+                                <span class="study-personnel">모집 가능 인원 : </span><br>
+                                <span class="study-time">시간 : </span><br>
+                            </div>
+                            <hr>
+
+                            <div class="user-info">
+                                <div class="user-profile">
+                                    <img src="./../images/user-default.png" class="study-leader-image">
+                                    <span class="study-leader-name">이름</span>
+                                </div>
+    
+                                <div class="study-region">
+                                    <a href="#"><i class="xi-heart"></i></a>
+                                    <button>지역1</button>
+                                    <button>지역2</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+        
+                    <div class="study-list-item">
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+      <!-- footer -->
+      <footer>
+        <div class="footer">
+            <div class="footer-top">
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">서비스이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <a href="tel:020200202">TEL : 02-020-0202 &nbsp;|&nbsp;</a>
+                <a href="mailto:sgether@sgetherinfo.com">EMAIL : sgether@sgetherinfo.com</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>©SGETHER. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+       <!-- Login Layer Popup -->
+       <div class="login-black-background">
+        <div class="login-white-background">
+            <p class="login-close">×</p>
+            <h3>LOGIN</h3>
+            <input type="text" placeholder="ID"><br>
+            <input type="password" placeholder="PASSWORD"><br>
+            <span><a href="#">ID 찾기</a></span>
+            <span>&nbsp;|&nbsp;</span>
+            <span><a href="#">비밀번호 찾기</a></span><br>
+            <button><a href="#">로그인</a></button><br>
+            <a href="#">
+                <button class="google-login-btn"></button></a><br><br>
+            <span>🥳 아직 회원이 아니신가요? <a href="#" class="span-underline">가입하기</a></span>
+        <div>
+    </div>
+
+    <script src="study-list.js"></script>
+</body>
+</html>

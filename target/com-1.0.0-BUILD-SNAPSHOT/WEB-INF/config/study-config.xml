@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- controller라는 패키지에서 컨트롤러를 검색합니다. -->
+	<context:component-scan base-package="controller.study" />
+	<context:component-scan base-package="dao" />
+
+	<!-- ViewResolver 설정하기 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="order" value="2"/>
+		<beans:property name="prefix" value="/WEB-INF/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+	<context:annotation-config/>
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
+		<message-converters>
+			<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<beans:property name="supportedMediaTypes">
+					<beans:list>
+						<beans:value>text/html;charset=UTF-8</beans:value>
+						<beans:value>application/json;charset=UTF-8</beans:value>
+					</beans:list>
+				</beans:property>
+			</beans:bean>
+		</message-converters>
+	</mvc:annotation-driven>
+
+	<beans:bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<beans:property name="favorPathExtension" value="false"/>
+		<beans:property name="favorParameter" value="true"/>
+		<beans:property name="ignoreAcceptHeader" value="false"/>
+	</beans:bean>
+
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="2000000" />
+	</beans:bean>
+</beans:beans>

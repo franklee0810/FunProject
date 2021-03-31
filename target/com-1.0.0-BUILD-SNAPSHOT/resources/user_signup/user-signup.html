@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SGETHER | 회원가입</title>
+    <link rel="stylesheet" href="./../main/main.css">
+    <link rel="stylesheet" href="user-signup.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+
+    <!-- User Alram & Interface Group -->
+    <div class="join-study-list">
+        <span><a href="#">Join Study List</a></span>
+        <span><a href="#">Join Study List</a></span>
+        <span><a href="#">Join Study List</a></span>
+    </div>
+
+    <div class="user-alram">
+        Alram :)
+    </div>
+
+    <div class="user-interface">
+        <div class="user-image">
+            <img src="" alt="">
+        </div>
+
+        <div class="user-name">
+            <p><strong>OOO님 환영합니다 :)</strong></p>
+            <div class="user-name-bar"></div>
+        </div>
+
+        <div class="user-interface-menu">
+            <ul>
+                <li><a href="#">회원정보 수정</a></li>
+                <li><a href="#">스크랩 목록</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <div class="header-logo-title">
+                <a href="#"><h1>SGETHER</h1></a>
+            </div>
+
+            <div class="header-menu">
+                <ul>
+                    <li><a href="#">스터디 찾기</a></li>
+                    <li><a href="#" class="join-study-btn">가입 중 스터디</a></li>
+                    <li><a href="#" class="login-btn">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+
+            <div class="header-search">
+                <input type="text" placeholder="스터디 검색"> 
+                <a href="#"><i class="xi-search"></i></a>
+                <i class="xi-bell-o main-user-alram"></i>
+                <i class="xi-profile main-user-btn"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Sign-up Section -->
+    <section>
+        <div class="wrapper">
+            <form name="signup_form" action="#" method="POST">
+                <div class="signup-image">
+                </div>
+    
+                <div class="signup-item-group">
+                    <div class="signup-item">
+                        <div class="signup-title">
+                            <h1>회원가입</h1>
+                        </div>
+                        
+                            <div class="signup-profile">     
+                                <div class="profile-img">
+                                    <img src="./../images/user-default.png" alt="user-image" class="user-image-preview" >
+                                </div>
+
+                                <div class="profile-upload">
+                                    <i class="xi-upload main-user-upload"></i>
+                                <input type="file" accept="image/*" name="uploadimage" class="uploadimage">
+                                </div>
+                            </div>
+
+                        <div class="signup-item">
+                            <div class="signup-input">
+                                <input type="text" name="id" placeholder="아이디">
+                                <button class="check-id-btn">중복 확인</button>
+                                <span class="error_id error"></span><br>
+                            </div>    
+                        </div>
+   
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="text" name="nickname" class="nickname" placeholder="닉네임">
+                            <button class="check-nick-btn">중복 확인</button><br>
+                            <span class="error error_nick"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="text" name="name" class="name" placeholder="이름">
+                            <span class="error error_name"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="password" name="password1" placeholder="비밀번호">
+                            <span class="error error_password1"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="password" name="password2" placeholder="비밀번호 확인">
+                            <span class="error error_password2"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="email" name="email" placeholder="이메일">
+                            <span class="error error_email"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <input type="number" name="age" placeholder="나이">
+                            <span class="error error_age"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-item">
+                        <div class="signup-input">
+                            <select name="gender">
+                                <option value="1">남성</option>
+                                <option value="2">여성</option>
+                            </select>
+                            <span class="error error_gender"></span>
+                        </div>
+                    </div>
+        
+                    <div class="signup-button-group">
+                        <button type="submit">회원가입</button>
+                        <button type="reset">취소</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="footer-top">
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">서비스이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <a href="tel:020200202">TEL : 02-020-0202 &nbsp;|&nbsp;</a>
+                <a href="mailto:sgether@sgetherinfo.com">EMAIL : sgether@sgetherinfo.com</a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>©SGETHER. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Layer Popup -->
+    <div class="login-black-background">
+        <div class="login-white-background">
+            <p class="login-close">×</p>
+            <h3>LOGIN</h3>
+            <input type="text" placeholder="ID"><br>
+            <input type="password" placeholder="PASSWORD"><br>
+            <span><a href="#">ID 찾기</a></span>
+            <span>&nbsp;|&nbsp;</span>
+            <span><a href="#">비밀번호 찾기</a></span><br>
+            <button><a href="#">로그인</a></button>
+            <a href="#"><button class="google-login-btn"></button></a><br><br>
+            <span>🥳 아직 회원이 아니신가요? <a href="#" class="span-underline">가입하기</a></span>
+        <div>
+    </div>
+
+    <script src="./../main/main.js"></script>
+    <script src="user-signup.js"></script>
+</body>
+</html>

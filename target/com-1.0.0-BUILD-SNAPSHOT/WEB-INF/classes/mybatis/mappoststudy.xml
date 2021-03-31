@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="MapperPostStudy">
+		<select id="SelectList" resultType="MyPostStudy" parameterType="HashMap" >
+				select m."nickname" as nickname, p."inputdate" as inputdate, p."content" as content,p."seq_post" as seq_post, m."mid" as mid ,s."file" as "file"
+				from ((study_post p inner join member m  on p."mid" = m."mid")
+				inner join study_sbscr a on a."mid"=m."mid" and p."mid" = a."mid" ) left outer join study_file s on s."seq_post" = p."seq_post"
+				where p."seq_study" = #{seq_study} and a."level" = 1
+				order by p."inputdate" desc
+		</select>
+
+		<select id="selectPostList" resultType="MyPostStudy" parameterType="hashMap">
+				select *
+				from STUDY_POST
+				where "seq_study" = #{seq_study} and "mid" not in(#{mid})
+				order by "inputdate" desc
+		</select>
+
+		<select id="selectPostFileList" resultType="MyStudyFile" parameterType="Integer">
+				select *
+				from STUDY_FILE
+				where "seq_post" = #{seq_post}
+				order by "seq_file" desc
+		</select>
+
+		<select id="selectHostPostList" resultType="MyPostStudy" parameterType="hashMap">
+				select *
+				from STUDY_POST
+				where "seq_study" = #{seq_study} and "mid" in(#{mid})
+				order by "inputdate" desc
+		</select>
+		
+		<insert id="InsertData" parameterType="hashMap">
+				insert into study_post
+				values(seq_post.nextval,#{mid},#{seq_study},#{content},sysdate)
+		</insert>
+		
+		<insert id="InsertFile" parameterType="hashMap">
+				insert into study_file values(seq_file.nextval,#{seq_post},#{file1},#{type},#{location},#{size})
+		</insert>
+		
+		<select id="SelectHostList" resultType="MyPostStudy" parameterType="hashMap" >
+			select m."nickname" as nickname, p."inputdate" as inputdate, p."content" as content,p."seq_post" as seq_post,p."mid" as mid, s."file" as "file"
+			from (study_post p inner join member m  on p."mid" = m."mid") left outer join study_file s on s."seq_post" = p."seq_post"
+			where "seq_study" = #{seq_study} and p."mid" = #{mid}
+			order by p."inputdate" desc
+		</select>
+		
+		<delete id="DeletePost" parameterType="Integer">
+			delete study_post where "seq_post" = #{seq_post}
+		</delete>
+		
+		<update id="UpdateContent" parameterType="MyPostStudy">
+			update study_post set "content" = #{content} where "seq_post" = #{seq_post} and "mid" = #{mid}
+		</update>
+		
+		<select id="SelectFileList" parameterType="Integer" resultType="MySharedFile">
+			select f."file",p."seq_post",f."seq_file"
+			from study_file f inner join study_post p on f."seq_post" = p."seq_post"
+			where p."seq_study" = #{seq_study}
+		</select>
+		
+		<delete id="DeleteFile" parameterType="hashMap">
+			delete study_file where "seq_post" = #{seq_post}
+		</delete>
+		
+		<select id="SelectFileListForDownLoad" parameterType="Integer" resultType="MySharedFile">
+			select * from study_file where "seq_file" = #{seq_file}
+		</select>
+
+		<select id="selectPostWriter" parameterType="hashMap" resultType="MyMember">
+			select "mid"
+			from study_post
+			where "seq_post" = #{seq_post} and "seq_study" = #{seq_study}
+		</select>
+
+		<insert id="insertFile" parameterType="MyStudyFile">
+			insert into study_file("seq_file", "seq_post", "file")
+			VALUES(seq_file.nextval, #{seq_post}, #{file})
+		</insert>
+	</mapper>

@@ -1,0 +1,663 @@
+/* COMMON */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 1500px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 14px;
+    color: #333;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.span-underline {
+    text-decoration: underline;
+}
+
+.underline-bar {
+    border: 1px dashed #eee;
+    width: 885px;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: burlywood;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.header-logo-title h1 {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.header-menu {
+    padding: 10px;
+    font-size: 13px;
+    margin-right: 130px;
+}
+
+.header-menu ul {
+    display: flex;
+}
+
+.header-menu li {
+    margin-right: 12px;
+}
+
+.header-menu li:hover {
+    font-weight: 600;
+}
+
+.header-search input {
+    width: 150px;
+    height: 20px;
+    font-size: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 7px;
+    padding: 11px;
+}
+
+.header-search input:focus {
+    outline: none;
+}
+
+.header-search i {
+    font-size: 19px;
+    margin-right: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.header-search i:hover {
+    color: white;
+}
+
+/* LOGIN */
+
+.login-black-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.login-white-background {
+    background: white;
+    width: 400px;
+    height: 400px;
+    margin: 230px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 1s;
+}
+
+.login-white-background h3 {
+    font-size: 20px;
+}
+
+.login-white-background input {
+    width: 200px;
+    height: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.login-white-background input[type='password'] {
+    margin-bottom: 20px;
+}
+
+.login-white-background input:focus {
+    outline: none;
+}
+
+.login-white-background span a {
+    color: gray;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.login-white-background p {
+    color: #333;
+    font-weight: 500;
+    text-align: right;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.login-white-background button {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-white-background button:hover {
+    font-weight: 700;
+}
+
+.login-white-background button:focus {
+    outline: none;
+}
+
+.google-login-btn {
+    width: 200px;
+    height: 30px;
+    background-image: url(./../images/google_login.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+}
+
+/* USER INTERFACE */
+
+.user-interface {
+    width: 200px;
+    height: 270px;
+    position: fixed;
+    top: 72px;
+    right: 14%;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: white;
+    z-index: 3;
+    display: none;
+    transition: all 0.5s;
+    font-size: 13px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #999;
+}
+
+.user-image {
+    border-radius: 50%;
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    margin: auto;
+}
+
+.user-name {
+    text-align: center;
+}
+
+.user-name-bar {
+    width: 160px;
+    height: 2px;
+    background-color: #999;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.user-interface-menu li {
+    margin-bottom: 10px;
+}
+
+.user-interface-menu li:hover {
+    font-weight: 500;
+}
+
+.user-alram {
+    background-color: white;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    position: fixed;
+    top: 72px;
+    right: 16%;
+    display: none;
+    z-index: 3;
+    transition: all 0.5s;
+    border-radius: 4px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #999;
+    font-size: 12px;
+}
+
+/* Join Study List */
+
+.join-study-list {
+    background-color: white;
+    width: 250px;
+    height: 150px;
+    padding: 10px;
+    position: fixed;
+    top: 72px;
+    left: 41.7%;
+    display: none;
+    z-index: 3;
+    transition: all 0.5s;
+    border-radius: 4px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #999;
+    font-size: 12px;
+    overflow: auto;
+    -ms-overflow-style: none;
+}
+
+.join-study-list::-webkit-scrollbar {
+    display: none;
+}
+
+.join-study-list span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.join-study-list span:hover {
+    font-weight: 500;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    height: 120px;
+    background-color: burlywood;
+    position: fixed;
+    bottom: 0px;
+    font-size: 13px;
+    padding: 8px;
+    display: none;
+}
+
+.footer-top ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-top li {
+    margin-right: 15px;
+}
+
+.footer-top li:hover {
+    font-weight: 500;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Study Create */
+
+.study-black-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.study-create {
+    width: 500px;
+    height: 670px;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    top: 15%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.login-close {
+    margin-left: 90%;
+    cursor: pointer;
+}
+
+.study-create h3 {
+    margin-bottom: 30px;
+}
+
+.study-create img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.study-create input {
+    width: 200px;
+    height: 30px;
+    padding: 8px;
+    margin-bottom: 17px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.study-create input:focus {
+    outline: none;
+}
+
+.study-create input::placeholder {
+    text-align: center;
+}
+
+.study-create input[type='file'] {
+    height: 100px;
+    position: absolute;
+    top: 15%;
+    right: 150px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.study-create select {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: url('./../images/arrow-btn.jpeg') no-repeat 95% 50%;
+    background-size: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    margin-bottom: 17px;
+}
+
+.study-create select:focus {
+    outline: none;
+}
+
+.study-create textarea {
+    width: 425px;
+    height: 100px;
+    border: 1px solid #ccc;
+    resize: none;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 17px;
+    overflow: hidden;
+}
+
+.study-create textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.study-create textarea:focus {
+    outline: none;
+}
+
+.study-create button {
+    width: 150px;
+    height: 30px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #e17055;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.study-create button:hover {
+    font-weight: 500;
+}
+
+.study-create button:focus {
+    outline: none;
+}
+
+/* Study List */
+
+.filter-group {
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.filter-group button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e17055;
+}
+
+.filter-group .search-btn {
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccc;
+    margin-right: 5px;
+}
+
+.filter-group a {
+    color: white;
+}
+
+.filter-group a:hover {
+    font-weight: 500;
+}
+
+.filter-group a:focus {
+    outline: none;
+}
+
+.filter-group select {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: url('./../images/arrow-btn.jpeg') no-repeat 95% 50%;
+    background-size: 20px;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+.filter-group select:focus {
+    outline: none;
+}
+
+.study-list-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 300px 0px 300px 40px;
+}
+
+.study-list-item-group {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.study-list-item {
+    display: block;
+    width: 250px;
+    height: 340px;
+    margin: 0px 60px 60px 0px;
+    border: 1px solid #eee;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #eee;
+}
+
+.study-list-item:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.study-list-image {
+    width: 250px;
+    height: 160px;
+    background-color: aquamarine;
+}
+
+.study-list-text {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.study-list-text .field {
+    color: #e17055;
+    font-weight: 600;
+    margin-right: 60%;
+}
+
+.study-list-text i {
+    color: #ccc;
+}
+
+.study-list-text .grade {
+    font-weight: 600;
+    color: #ccc;
+}
+
+.sub-info {
+    margin-bottom: 10px;
+}
+.sub-info .study-personnel {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: 0.5px solid #eee;
+    opacity: 0.5;
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-profile {
+    padding-top: 5px;
+    vertical-align: middle;
+}
+
+.user-profile .study-leader-image {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.user-profile .study-leader-name {
+    margin-right: 50px;
+}
+
+.study-region {
+    padding-top: 5px;
+}
+
+.study-region i {
+    color: red;
+    vertical-align: middle;
+    font-size: 13px;
+    margin-right: 3px;
+    opacity: 0.9;
+}
+
+.study-region button {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 11px;
+    width: 50px;
+    height: 20px;
+    padding: 4px;
+    vertical-align: middle;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 1920px) {
+    .user-interface {
+        right: 20%;
+    }
+
+    .main-image-content {
+        width: 47%;
+        margin: 8% auto 100px auto;
+    }
+
+    .user-alram {
+        top: 72px;
+        right: 21.5%;
+    }
+
+    .join-study-list {
+        top: 72px;
+        left: 43.3%;
+    }
+}
+
+.profile-icon {
+    position: absolute;
+    left: 75px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
