@@ -1,4 +1,4 @@
-# Project2
+# Fun project
 
 *** 재미로 한 프로젝트 ***
  
